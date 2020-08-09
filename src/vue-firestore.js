@@ -130,7 +130,7 @@ function documents({ vm, key, source, resolve, reject }) {
         vm[key] = container;
       } else {
         delete vm.$firestore[key];
-        reject(new Error(`This document (${key}) is not exist or permission denied.`));
+        reject(console.warning(`The document (${key}) doesn't exist or permission was denied`));
       }
       resolve(vm[key]);
     },
